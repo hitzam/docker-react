@@ -1,7 +1,3 @@
-# sudo: required
-# language: node_js
-# node_js:
-#   - 8
 services:
   - docker
 
@@ -16,10 +12,9 @@ deploy:
   region: "ap-southeast-1"
   app: "docker-react"
   env: "Dockerreact-env"
-  bucket_name: "elasticbeanstalk-ap-southeast-1-879968581425"
+  bucket: "elasticbeanstalk-ap-southeast-1-879968581425"
   bucket_path: "docker-react"
   on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+  secret_access_key: $AWS_SECRET_KEY
